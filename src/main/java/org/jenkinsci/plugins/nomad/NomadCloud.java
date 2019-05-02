@@ -211,8 +211,8 @@ public class NomadCloud extends AbstractCloudImpl {
             } finally {
                 future.cancel(true);
                 executorService.shutdown();
-                pending -= template.getNumExecutors();
             }
+            pending -= template.getNumExecutors();
             return slave;
         }
     }
